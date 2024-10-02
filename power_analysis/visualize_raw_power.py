@@ -75,7 +75,7 @@ def plot_time_series_data(whole_mouse_dict, phase):
         FFT_T = FFT_N * FFT_dt # 10
         df = 1 / FFT_T # Determine frequency resolution
         fNQ = 1 / FFT_dt / 2 # Determine Nyquist frequency
-        faxis = np.arange(0.5,fNQ,df) # Construct frequency axis
+        faxis = np.arange(0,fNQ,df) # Construct frequency axis
         
         plt.xlim([0.5, 20])
         plt.plot(faxis, a_mean, ls = '-', color = 'green', lw = 1.2, alpha = 0.5)
