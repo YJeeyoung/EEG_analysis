@@ -84,4 +84,4 @@ Following arguments are optional:
 ```
 
 ## Example usages
-Example data and visualization result will be available after the manuscript becomes public.
+Example data and visualization results will be available after the manuscript becomes public.
