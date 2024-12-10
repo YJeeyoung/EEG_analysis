@@ -109,7 +109,7 @@ def convert_six_dict(mat_dict):
     return six_dict
 
 def convert_pvalue_to_asterisks(pvalue):
-    #print('p value :', pvalue)
+    #print('p value :', pvalue) # use this line to get specific p-value.
     if pvalue <= 0.0001:
         return "****"
     elif pvalue <= 0.001:
