@@ -1,11 +1,8 @@
-import mne
 import h5py
 import os
 import pyedflib
-import scipy.io
 import numpy as np
-import matplotlib.pyplot as plt
-from numpy.fft import fft, rfft
+from numpy.fft import fft
 from scipy.signal import detrend
 
 '''Perform Fast Fourier Transform (FFT) analysis on EEGs or LFPs'''

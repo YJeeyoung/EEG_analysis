@@ -1,14 +1,9 @@
 import argparse
-import csv
 import os
-import re
-import statistics
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
 from pathlib import Path
-from logging import raiseExceptions
 from helper_function import get_count_mat_dictionary, convert_six_dict
 
 '''

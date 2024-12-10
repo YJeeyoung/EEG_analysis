@@ -1,12 +1,6 @@
-import pickle
-import statistics
-import pingouin as pg
 import seaborn as sns
 import pandas as pd
-import numpy as np
-from scipy import stats
 import matplotlib.pyplot as plt
-
 import pandas as pd
 
 df = pd.read_csv('241125_JY_final_copy/power_with_sirenia_for_ten/241204_save_var/delta_df.csv')

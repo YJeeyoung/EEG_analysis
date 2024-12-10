@@ -1,8 +1,5 @@
 import argparse
-import csv
 import os
-import re
-import numpy as np
 import pandas as pd
 import pingouin as pg
 import seaborn as sns

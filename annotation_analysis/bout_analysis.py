@@ -3,7 +3,6 @@ import csv
 import re
 import os
 import itertools
-import numpy as np
 import pandas as pd
 import pingouin as pg
 import seaborn as sns

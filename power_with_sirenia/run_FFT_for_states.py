@@ -2,11 +2,8 @@ import argparse
 import pickle
 import os
 import FFT
-import statistics
 import numpy as np
 import read_annot_get_state as annot
-from scipy import stats
-from tqdm import tqdm
 from pathlib import Path
 
 parser = argparse.ArgumentParser()

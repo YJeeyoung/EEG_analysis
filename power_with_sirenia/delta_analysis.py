@@ -1,13 +1,7 @@
 #calculate each wave occurance from normalized median FFT, save output df as csv.
 
 import pickle
-import statistics
-import pingouin as pg
-import seaborn as sns
 import pandas as pd
-import numpy as np
-from scipy import stats
-import matplotlib.pyplot as plt
 
 with open('241125_JY_final_copy/power_with_sirenia_for_ten/241204_save_var/mouse_median_dict.pickle', 'rb') as handle:
     whole_mouse_dict = pickle.load(handle)
