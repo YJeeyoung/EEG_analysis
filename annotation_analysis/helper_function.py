@@ -103,9 +103,7 @@ def convert_six_dict(mat_dict):
     six_dict = {}
     for key, item in mat_dict.items():
         _list = mat_dict[key]
-        #print('before :', _list)
         six_list = np.array(_list[-6:].tolist() + _list[:-6].tolist())
-        #print('after :', six_list)
         assert len(six_list) == len(_list), 'indexing error'
         six_dict[key] = six_list
     return six_dict
