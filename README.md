@@ -71,7 +71,7 @@ Following arguments are optional:
 ### Bout analysis
 Run the following command:
 ```
-python annotation_analysis/bout_analysis_analysis.py --annot_dir dir_to_state_annotations
+python annotation_analysis/bout_analysis.py --annot_dir dir_to_state_annotations
 ```
 
 Following arguments are optional:
