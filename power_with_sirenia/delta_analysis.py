@@ -1,9 +1,21 @@
 #calculate each wave occurance from normalized median FFT, save output df as csv.
-
+import argparse
 import pickle
 import pandas as pd
 
-with open('241125_JY_final_copy/power_with_sirenia_for_ten/241204_save_var/mouse_median_dict.pickle', 'rb') as handle:
+parser = argparse.ArgumentParser()
+parser.add_argument("--median_dir", type=str, default=None, required=True, 
+                    help = 'copy paste directory for median FFT results')
+parser.add_argument("--a_label", type=str, default='A', help = 'label for A group')
+parser.add_argument("--b_label", type=str, default='B', help = 'label for B group')
+parser.add_argument("--save_dir", type=str, default='save_imgs/', help = 'directory to save output figures')  
+args = parser.parse_args()
+median_dir = args.median_dir
+A = args.a_label
+B = args.b_label
+save_dir = args.save_dir
+
+with open(f'{median_dir}', 'rb') as handle:
     whole_mouse_dict = pickle.load(handle)
 
 freq_dict = {}
@@ -27,9 +39,9 @@ def freq_sum(FFT_result): # 해당 쥐의 median fft 결과를 토대로 각 주
 
 def label_group(row):
   if 'A' in row['ID']:
-    return 'GFP'
+    return A
   else:
-    return 'VEGFC'
+    return B
 
 def make_row_per_mouse(mouse_id):
     mouse_list = []
@@ -75,4 +87,4 @@ freq_df = pd.DataFrame(total_list, columns=['delta', 'theta', 'alpha', 'beta', '
 freq_df['group'] = freq_df.apply(label_group, axis=1)
 
 df = freq_df[['group', 'ID', 'phase', 'state', 'delta', 'theta', 'alpha', 'beta', 'gamma']]
-df.to_csv('241125_JY_final_copy/power_with_sirenia_for_ten/241204_save_var/delta_df.csv', index=False) 
+df.to_csv(f'{save_dir}/delta_df.csv', index=False) 
