@@ -22,12 +22,7 @@ def norm_FFT(_list): # normaluze FFT result. % conversion until 50Hz.
 def freq_sum(FFT_result): # 해당 쥐의 median fft 결과를 토대로 각 주파수 합 구함
     _sum_list = []
     for key, value in freq_dict.items():
-        # print('sum :', sum(FFT_result[i] for i in value))
-        # print('type:', type(sum(FFT_result[i] for i in value)))
-        # print('sum :', sum(FFT_result[i] for i in value).real) # 이러면 complex128 -> float
         _sum_list.append(sum(FFT_result[i] for i in value))
-        #_sum_list.append(sum(FFT_result[value]))
-    #print('_sum_list :', _sum_list)
     return _sum_list
 
 def label_group(row):
@@ -38,9 +33,7 @@ def label_group(row):
 
 def make_row_per_mouse(mouse_id):
     mouse_list = []
-    dark_wake = norm_FFT(whole_mouse_dict[mouse_id][0])
-    print('dark_wake', dark_wake)
-    #print('len', len(dark_wake)) #496           
+    dark_wake = norm_FFT(whole_mouse_dict[mouse_id][0])      
     dark_nrem = norm_FFT(whole_mouse_dict[mouse_id][1])
     dark_rem = norm_FFT(whole_mouse_dict[mouse_id][2])
     light_wake = norm_FFT(whole_mouse_dict[mouse_id][3])
@@ -72,21 +65,14 @@ def make_row_per_mouse(mouse_id):
     mouse_list.append(light_rem_freq)
 
     return mouse_list
-print(make_row_per_mouse('A1'))
 
 total_list = []
 for key, value in whole_mouse_dict.items():
     total_list.extend(make_row_per_mouse(key))
 
-print(len(total_list)) 
-print(total_list[0])
-print(len(total_list[0]))
-
 freq_df = pd.DataFrame(total_list, columns=['delta', 'theta', 'alpha', 'beta', 'gamma', 'phase', 'state','ID'])
 
 freq_df['group'] = freq_df.apply(label_group, axis=1)
 
-print(freq_df)
 df = freq_df[['group', 'ID', 'phase', 'state', 'delta', 'theta', 'alpha', 'beta', 'gamma']]
-print(df)
 df.to_csv('241125_JY_final_copy/power_with_sirenia_for_ten/241204_save_var/delta_df.csv', index=False) 
