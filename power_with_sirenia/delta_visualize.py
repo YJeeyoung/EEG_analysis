@@ -1,8 +1,11 @@
+''' 
+visualize normilized power for each frequency
+'''
+
 import argparse
 import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
-import pandas as pd
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--delta_df_dir", type=str, required = True,
