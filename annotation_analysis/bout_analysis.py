@@ -22,7 +22,7 @@ parser.add_argument("--annot_dir", type=str, default=None,
 parser.add_argument("--a_label", type=str, default='A', help = 'label for A group')
 parser.add_argument("--b_label", type=str, default='B', help = 'label for B group')
 parser.add_argument("--bin_count", type=int, default = 2, help = 'bin for smoothing time')
-parser.add_argument("--save_dir", type=str, default='241125_save_imgs/', help = 'directory to save output figures')
+parser.add_argument("--save_dir", type=str, default='save_imgs/', help = 'directory to save output figures')
 args = parser.parse_args()
 
 directory = args.annot_dir

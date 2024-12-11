@@ -1,19 +1,24 @@
 #calculate each wave occurance from normalized median FFT, save output df as csv.
 import argparse
+import os
 import pickle
 import pandas as pd
+from pathlib import Path
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--median_dir", type=str, default=None, required=True, 
                     help = 'copy paste directory for median FFT results')
 parser.add_argument("--a_label", type=str, default='A', help = 'label for A group')
 parser.add_argument("--b_label", type=str, default='B', help = 'label for B group')
-parser.add_argument("--save_dir", type=str, default='save_imgs/', help = 'directory to save output figures')  
+parser.add_argument("--save_dir", type=str, default='save_var/', help = 'directory to save median fft')  
 args = parser.parse_args()
 median_dir = args.median_dir
 A = args.a_label
 B = args.b_label
 save_dir = args.save_dir
+
+if not os.path.exists(save_dir):
+  Path(save_dir).mkdir(parents=True)
 
 with open(f'{median_dir}', 'rb') as handle:
     whole_mouse_dict = pickle.load(handle)
