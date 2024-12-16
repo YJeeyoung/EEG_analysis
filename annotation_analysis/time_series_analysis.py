@@ -17,7 +17,7 @@ parser.add_argument("--annot_dir", type=str, default=None,
 parser.add_argument("--a_label", type=str, default='A', help = 'label for A group')
 parser.add_argument("--b_label", type=str, default='B', help = 'label for B group')
 parser.add_argument("--bin_count", type=int, default = 2, help = 'bin for smoothing time')
-parser.add_argument("--save_dir", type=str, default='241125_save_imgs/', help = 'directory to save output figures')
+parser.add_argument("--save_dir", type=str, default='save_imgs/annot/', help = 'directory to save output figures')
 args = parser.parse_args()
 
 dir = args.annot_dir
@@ -149,7 +149,7 @@ def plot_time_series_data(df, _type, scale = 100, _mode = 'shade'):
         plt.axhline(y=-0.2, xmin = 0, xmax = 0.5, color='black', linestyle='-')
 
     plt.legend()
-    plt.savefig(f'{save_dir}{A}{B}_{_type}_{_mode}.png', bbox_inches='tight')
+    plt.savefig(f'{save_dir}{A}{B}_timeseries_{_type}_{_mode}.png', bbox_inches='tight')
     plt.show()
   else:
     plt.xlim(0 , 22)
@@ -195,7 +195,7 @@ def plot_time_series_data(df, _type, scale = 100, _mode = 'shade'):
 
 
     plt.legend()
-    plt.savefig(f'{save_dir}{A}{B}_{_type}_{_mode}.png', bbox_inches='tight')
+    plt.savefig(f'{save_dir}{A}{B}_timeseries_{_type}_{_mode}.png', bbox_inches='tight')
     plt.show()
      
 plot_time_series_data(wake_df, 'Wake', _mode = 'error_bar')

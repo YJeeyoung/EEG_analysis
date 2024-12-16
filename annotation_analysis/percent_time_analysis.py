@@ -17,7 +17,7 @@ parser.add_argument("--annot_dir", type=str, default=None,
                       required=True, help= 'copy paste directory for sleep annotation files.tsv')
 parser.add_argument("--a_label", type=str, default='A', help = 'label for A group')
 parser.add_argument("--b_label", type=str, default='B', help = 'label for B group')
-parser.add_argument("--save_dir", type=str, default='241125_save_imgs/', help = 'directory to save output figures')
+parser.add_argument("--save_dir", type=str, default='save_imgs/annot/', help = 'directory to save output figures')
 args = parser.parse_args()
 
 directory = args.annot_dir
@@ -201,7 +201,7 @@ def plot_figure(data_frame, phase, palette_info):
     annot_stat(rem_star, 0, 1, 11, 0.1, ax=axes[2])
     annot_stat(nrem_star, 0, 1, 53, 1, ax=axes[1])
   plt.tight_layout()
-  plt.savefig(f'{save_dir}/{A_label}{B_label}_{phase}_{palette_info}.png', bbox_inches='tight')
+  plt.savefig(f'{save_dir}/{A_label}{B_label}_percent_time_{phase}_{palette_info}.png', bbox_inches='tight')
   plt.show()
 
 plot_figure(dark_per_df, 'dark', 'red')
