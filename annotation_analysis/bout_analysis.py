@@ -42,7 +42,6 @@ def get_bout_info(mouse_dir):
       try:
         if bool(re.search(r'\d', data[i][0])):
           return(i)
-          break
       except:
         pass
 
@@ -75,7 +74,6 @@ def get_bout_info(mouse_dir):
       try:
         if bool(re.search(r'18:00', data[i][1])):
           return(i)
-          break
       except:
         pass
 
@@ -89,7 +87,6 @@ def get_bout_info(mouse_dir):
       try:
         if bool(re.search(r'06:00', data[i][1])):
           return(i)
-          break
       except:
         pass
 
