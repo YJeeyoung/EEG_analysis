@@ -14,7 +14,7 @@ requires FFT result from run_FFT_for_states.py
 parser = argparse.ArgumentParser()
 parser.add_argument("--median_FFT_dir", type=str, default='save_var/mouse_median_dict.pickle', 
                         help = 'copy paste directory for median FFT result from run_FFT_for_states.py')
-parser.add_argument("--img_save_dir", default='save_img_FFT',
+parser.add_argument("--img_save_dir", default='save_imgs/FFT/',
                         help = 'dir for saving raw power visualization')
 parser.add_argument("--a_label", type=str, default='A', help = 'label for A group')
 parser.add_argument("--b_label", type=str, default='B', help = 'label for B group')
