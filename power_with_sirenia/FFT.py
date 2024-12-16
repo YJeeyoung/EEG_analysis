@@ -12,11 +12,9 @@ def get_FFT_per_mouse(mouse_dir, dsf):
     file = mouse_dir
     file_name, file_extension = os.path.splitext(file)
 
-    print('file extension', file_extension)  # Output: .txt
     if file_extension == '.mat':
         EEG = np.array( h5py.File(file,'r').get('EEG1'))[0].reshape(-1)    
         EEG = EEG[:86400000]
-        #EEG = np.array( h5py.File(file,'r').get('EEG1'))[0].reshape(-1)    
     elif file_extension == '.edf':
         f = pyedflib.EdfReader(file)
         n = f.signals_in_file
