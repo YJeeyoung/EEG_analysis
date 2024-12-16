@@ -57,7 +57,6 @@ def get_mouse_names(annot_base_dir):
 
 whole_mouse_dict = {}
 for filename in os.listdir(annot_base_dir):
-    #print(filename)
     x = filename.split('_')
     mouse_id = x[0]
     if os.path.exists(f'{trace_base_dir}\{mouse_id}_export_24.mat'):

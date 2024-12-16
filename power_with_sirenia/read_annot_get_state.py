@@ -13,7 +13,6 @@ def get_annot(mouse_dir):
       try:
         if bool(re.search(r'\d', data[i][0])):
           return(i)
-          break
       except:
         pass
 
